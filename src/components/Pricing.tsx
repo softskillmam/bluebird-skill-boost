@@ -7,7 +7,7 @@ const plans = [
   {
     name: "Starter",
     price: "₹2,999",
-    period: "/month",
+    period: "/Year",
     description: "Perfect for beginners starting their soft skills journey",
     features: [
       "Access to 10 core modules",
@@ -21,7 +21,7 @@ const plans = [
   {
     name: "Professional",
     price: "₹5,999",
-    period: "/month",
+    period: "/Year",
     description: "Most popular choice for serious career growth",
     features: [
       "Access to all 50+ modules",
@@ -37,7 +37,7 @@ const plans = [
   {
     name: "Enterprise",
     price: "₹9,999",
-    period: "/month",
+    period: "/Year",
     description: "For teams and organizations seeking excellence",
     features: [
       "Everything in Professional",
