@@ -5,6 +5,7 @@ import Courses from "@/components/Courses";
 import Trainers from "@/components/Trainers";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
+import Contact from "@/components/Contact";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -19,6 +20,7 @@ const Index = () => {
         <Trainers />
         <Testimonials />
         <Pricing />
+        <Contact />
         <CTA />
       </main>
       <Footer />
