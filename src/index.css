@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 210 4% 19%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 210 6% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 8 82% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 15 77% 79%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 210 4% 25%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 9 100% 69%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 4% 25%;
+    --input: 210 4% 25%;
+    --ring: 8 82% 62%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 210 6% 15%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 8 82% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 4% 25%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 210 4% 25%;
+    --sidebar-ring: 8 82% 62%;
+
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(8, 82%, 62%), hsl(9, 100%, 69%));
+    --gradient-hero: linear-gradient(180deg, hsl(0, 0%, 10%) 0%, hsl(210, 6%, 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(210, 4%, 19%), hsl(210, 6%, 15%));
+    
+    --shadow-glow: 0 0 40px hsl(8 82% 62% / 0.3);
+    --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.4);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 98%;
+    --card: 210 4% 19%;
+    --card-foreground: 0 0% 98%;
+    --popover: 210 6% 15%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 8 82% 62%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 15 77% 79%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 210 4% 25%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 9 100% 69%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 4% 25%;
+    --input: 210 4% 25%;
+    --ring: 8 82% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background-image: var(--gradient-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-2;
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Parallax utilities */
+.parallax-container {
+  perspective: 1000px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax-slow {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+.parallax-medium {
+  will-change: transform;
+  transition: transform 0.15s linear;
+}
+
+.parallax-fast {
+  will-change: transform;
+  transition: transform 0.2s linear;
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delay utilities */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
