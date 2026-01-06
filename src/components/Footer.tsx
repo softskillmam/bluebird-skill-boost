@@ -68,9 +68,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <a href="#home" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">B</span>
-              </div>
+              <img src="/favicon.ico" alt="BlueBirds" className="w-10 h-10" />
               <span className="text-xl font-bold text-foreground">
                 Blue<span className="text-primary">Birds</span>solutions
               </span>
@@ -82,17 +80,17 @@ const Footer = () => {
             
             {/* Contact Info */}
             <div className="space-y-3">
-              <a href="mailto:hello@bluebirdssolutions.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:info@bluebirdssolutions.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Mail className="w-5 h-5" />
-                <span>hello@bluebirdssolutions.com</span>
+                <span>info@bluebirdssolutions.com</span>
               </a>
-              <a href="tel:+919876543210" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <a href="tel:+919790143087" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Phone className="w-5 h-5" />
-                <span>+91 98765 43210</span>
+                <span>+91 97901 43087</span>
               </a>
               <div className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>Madurai,TamilNadu, India</span>
+                <span>Ferouz Tower, Door No. 383, Annanagar Main Road, Opposite Indian Post Office, Annanagar, Madurai - 625020</span>
               </div>
             </div>
           </div>

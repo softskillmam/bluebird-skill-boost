@@ -1,53 +1,49 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Clock, Users, Star, ArrowRight } from "lucide-react";
+import { ArrowRight, Star, Clock, Users } from "lucide-react";
 import ParallaxSection from "./ParallaxSection";
 import { useParallax } from "@/hooks/useParallax";
 
 const courses = [
   {
-    title: "Communication Mastery",
-    description: "Master verbal and non-verbal communication for professional success.",
+    title: "Soft Skills",
+    description: "Master essential communication, body language, and professional etiquette.",
     duration: "8 weeks",
     students: "2.5k+",
     rating: 4.9,
     modules: 24,
-    color: "from-primary to-accent",
+    color: "from-blue-500 to-cyan-500",
+    link: "/courses/soft-skills",
   },
   {
-    title: "Interview Confidence",
-    description: "Build unshakeable confidence to ace any job interview.",
-    duration: "6 weeks",
+    title: "Technical Skillsets",
+    description: "Learn programming fundamentals, full stack development, and AI basics.",
+    duration: "12 weeks",
     students: "3.2k+",
     rating: 4.8,
-    modules: 18,
-    color: "from-accent to-secondary",
+    modules: 32,
+    color: "from-purple-500 to-pink-500",
+    link: "/courses/technical-skills",
   },
   {
-    title: "Emotional Intelligence",
-    description: "Develop self-awareness, empathy, and social skills for leadership.",
-    duration: "10 weeks",
-    students: "1.8k+",
-    rating: 4.9,
-    modules: 30,
-    color: "from-secondary to-primary",
-  },
-  {
-    title: "Leadership & Teamwork",
-    description: "Learn to lead teams effectively and collaborate with excellence.",
-    duration: "8 weeks",
-    students: "2.1k+",
-    rating: 4.7,
-    modules: 22,
-    color: "from-primary to-secondary",
-  },
-  {
-    title: "Presentation Skills",
-    description: "Deliver impactful presentations that captivate any audience.",
-    duration: "4 weeks",
+    title: "Aptitude Training",
+    description: "Strengthen analytical thinking and logical reasoning for placements.",
+    duration: "6 weeks",
     students: "4.5k+",
     rating: 4.9,
+    modules: 18,
+    color: "from-green-500 to-teal-500",
+    link: "/courses/aptitude",
+  },
+  {
+    title: "Other Courses",
+    description: "Goal orientation, GD skills, resume writing, and personal presentation.",
+    duration: "4 weeks",
+    students: "1.8k+",
+    rating: 4.7,
     modules: 12,
-    color: "from-accent to-primary",
+    color: "from-orange-500 to-red-500",
+    link: "/courses/others",
   },
 ];
 
@@ -60,11 +56,11 @@ const Courses = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div 
           className="absolute top-1/4 -right-32 w-64 h-64 border border-primary/10 rounded-full"
-          style={{ transform: `translateY(${parallaxOffset * 0.4}px) rotate(${parallaxOffset * 0.1}deg)` }}
+          style={{ transform: `translateY(${parallaxOffset * 0.4}px)` }}
         />
         <div 
           className="absolute bottom-1/4 -left-32 w-80 h-80 border border-accent/10 rounded-full"
-          style={{ transform: `translateY(${parallaxOffset * -0.3}px) rotate(${parallaxOffset * -0.1}deg)` }}
+          style={{ transform: `translateY(${parallaxOffset * -0.3}px)` }}
         />
       </div>
 
@@ -80,51 +76,59 @@ const Courses = () => {
             <span className="text-gradient">Expert-Led Training</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Choose from our comprehensive range of soft skills courses designed 
+            Choose from our comprehensive range of courses designed 
             by industry experts to accelerate your professional growth.
           </p>
         </ParallaxSection>
 
         {/* Courses Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {courses.map((course, index) => (
             <ParallaxSection
               key={index}
-              animation={index % 2 === 0 ? "reveal-left" : "reveal-right"}
+              animation="reveal-scale"
               delay={index * 100}
             >
-              <div className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover-lift h-full">
+              <div className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full">
                 {/* Gradient header */}
-                <div className={`h-2 bg-gradient-to-r ${course.color}`} />
+                <div className={`h-1.5 bg-gradient-to-r ${course.color}`} />
                 
-                <div className="p-6 lg:p-8">
-                  <div className="flex items-center gap-2 mb-4">
+                <div className="p-5">
+                  {/* Rating & Modules */}
+                  <div className="flex items-center gap-2 mb-3">
                     <Star className="w-4 h-4 text-primary fill-primary" />
                     <span className="text-sm font-medium text-foreground">{course.rating}</span>
                     <span className="text-muted-foreground text-sm">• {course.modules} modules</span>
                   </div>
 
-                  <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
+                  {/* Title */}
+                  <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-primary transition-colors">
                     {course.title}
                   </h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  
+                  {/* Description */}
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                     {course.description}
                   </p>
 
-                  <div className="flex items-center gap-6 mb-6 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4" />
+                  {/* Duration & Students */}
+                  <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5" />
                       <span>{course.duration}</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Users className="w-4 h-4" />
-                      <span>{course.students} students</span>
+                    <div className="flex items-center gap-1.5">
+                      <Users className="w-3.5 h-3.5" />
+                      <span>{course.students}</span>
                     </div>
                   </div>
 
-                  <Button variant="outline" className="w-full group/btn">
-                    Learn More
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                  {/* Button */}
+                  <Button variant="outline" size="sm" className="w-full group/btn" asChild>
+                    <Link to={course.link}>
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover/btn:translate-x-1" />
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -134,9 +138,11 @@ const Courses = () => {
 
         {/* View All CTA */}
         <ParallaxSection className="text-center mt-12" delay={500}>
-          <Button variant="hero" size="lg">
-            View All Courses
-            <ArrowRight className="w-5 h-5" />
+          <Button variant="hero" size="lg" asChild>
+            <Link to="/courses/soft-skills">
+              Start Your Journey
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </Button>
         </ParallaxSection>
       </div>
@@ -145,3 +151,4 @@ const Courses = () => {
 };
 
 export default Courses;
+

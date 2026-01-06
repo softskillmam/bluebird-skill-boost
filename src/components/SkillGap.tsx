@@ -5,12 +5,12 @@ const SkillGap = () => {
   const parallaxOffset = useParallax({ speed: 0.1 });
 
   return (
-    <section className="py-20 lg:py-32 bg-[#1a1a1a] relative overflow-hidden">
+    <section className="py-20 lg:py-32 bg-muted relative overflow-hidden">
       {/* Dotted pattern background */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-20"
+        className="absolute inset-0 pointer-events-none opacity-30"
         style={{
-          backgroundImage: `radial-gradient(circle, #f97316 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle, hsl(197, 93%, 44%) 1px, transparent 1px)`,
           backgroundSize: '40px 40px',
         }}
       />
@@ -55,7 +55,7 @@ const SkillGap = () => {
               </div>
 
               {/* Main heading */}
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                 Bridging The Skill Gap
               </h2>
 

@@ -41,9 +41,17 @@ const Hero = () => {
             className="space-y-8"
             style={{ transform: `translateY(${parallaxOffset * 0.1}px)` }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border animate-fade-in-up">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <span className="text-sm text-muted-foreground">Unlock Your True Potential</span>
+            <div 
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full animate-fade-in-up"
+              style={{
+                background: 'linear-gradient(145deg, hsl(197, 93%, 48%), hsl(197, 93%, 40%))',
+                boxShadow: '6px 6px 12px hsl(197, 93%, 25% / 0.4), -3px -3px 8px hsl(0, 0%, 100% / 0.3), inset 1px 1px 2px hsl(0, 0%, 100% / 0.3), inset -1px -1px 2px hsl(197, 93%, 30% / 0.2)',
+                transform: 'perspective(500px) rotateX(2deg)',
+                border: '1px solid hsl(197, 93%, 55% / 0.5)',
+              }}
+            >
+              <span className="w-3 h-3 bg-white rounded-full animate-pulse shadow-md" />
+              <span className="text-base md:text-lg font-semibold text-white italic drop-shadow-md">"Skills for a great life and not just your job"</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
@@ -75,14 +83,12 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-              <Button variant="hero" size="xl" className="group">
-                Get Started Now
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button variant="heroOutline" size="xl" className="group">
-                <Play className="w-5 h-5" />
-                Watch Demo
-              </Button>
+              <a href="#contact">
+                <Button variant="hero" size="xl" className="group">
+                  Get Started Now
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </a>
             </div>
           </div>
 

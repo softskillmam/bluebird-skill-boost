@@ -3,11 +3,12 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import SkillGap from "@/components/SkillGap";
 import Courses from "@/components/Courses";
-import Trainers from "@/components/Trainers";
+// import Trainers from "@/components/Trainers";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
 import CTA from "@/components/CTA";
+import VisionMission from "@/components/VisionMission";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -19,10 +20,11 @@ const Index = () => {
         <Features />
         <SkillGap />
         <Courses />
-        <Trainers />
+        {/* <Trainers /> */}
         <Testimonials />
         <Pricing />
         <CTA />
+        <VisionMission />
         <Contact />
       </main>
       <Footer />

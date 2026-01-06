@@ -43,9 +43,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-14 px-4 lg:px-6">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2 shrink-0">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center shadow-glow">
-              <span className="text-primary-foreground font-bold text-base">B</span>
-            </div>
+            <img src="/favicon.ico" alt="BlueBirds" className="w-8 h-8" />
             <span className="text-base font-bold text-foreground hidden sm:block">
               Blue<span className="text-primary">Birds</span>
             </span>
