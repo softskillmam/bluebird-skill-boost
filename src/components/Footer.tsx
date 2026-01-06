@@ -1,37 +1,68 @@
 import { Facebook, Instagram, Linkedin, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
-
 const footerLinks = {
-  company: [
-    { name: "About Us", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Press", href: "#" },
-  ],
-  courses: [
-    { name: "Communication Mastery", href: "#" },
-    { name: "Interview Confidence", href: "#" },
-    { name: "Emotional Intelligence", href: "#" },
-    { name: "Leadership Skills", href: "#" },
-  ],
-  support: [
-    { name: "Help Center", href: "#" },
-    { name: "FAQs", href: "#" },
-    { name: "Contact Us", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-  ],
+  company: [{
+    name: "About Us",
+    href: "#"
+  }, {
+    name: "Careers",
+    href: "#"
+  }, {
+    name: "Blog",
+    href: "#"
+  }, {
+    name: "Press",
+    href: "#"
+  }],
+  courses: [{
+    name: "Communication Mastery",
+    href: "#"
+  }, {
+    name: "Interview Confidence",
+    href: "#"
+  }, {
+    name: "Emotional Intelligence",
+    href: "#"
+  }, {
+    name: "Leadership Skills",
+    href: "#"
+  }],
+  support: [{
+    name: "Help Center",
+    href: "#"
+  }, {
+    name: "FAQs",
+    href: "#"
+  }, {
+    name: "Contact Us",
+    href: "#"
+  }, {
+    name: "Privacy Policy",
+    href: "#"
+  }]
 };
-
-const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-];
-
+const socialLinks = [{
+  icon: Facebook,
+  href: "#",
+  label: "Facebook"
+}, {
+  icon: Instagram,
+  href: "#",
+  label: "Instagram"
+}, {
+  icon: Linkedin,
+  href: "#",
+  label: "LinkedIn"
+}, {
+  icon: Twitter,
+  href: "#",
+  label: "Twitter"
+}, {
+  icon: Youtube,
+  href: "#",
+  label: "YouTube"
+}];
 const Footer = () => {
-  return (
-    <footer id="contact" className="bg-popover border-t border-border">
+  return <footer id="contact" className="bg-popover border-t border-border">
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
@@ -61,7 +92,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>Bengaluru, Karnataka, India</span>
+                <span>Madurai,TamilNadu, India</span>
               </div>
             </div>
           </div>
@@ -70,39 +101,33 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Company</h4>
             <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
+              {footerLinks.company.map(link => <li key={link.name}>
                   <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-foreground mb-4">Courses</h4>
             <ul className="space-y-3">
-              {footerLinks.courses.map((link) => (
-                <li key={link.name}>
+              {footerLinks.courses.map(link => <li key={link.name}>
                   <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-foreground mb-4">Support</h4>
             <ul className="space-y-3">
-              {footerLinks.support.map((link) => (
-                <li key={link.name}>
+              {footerLinks.support.map(link => <li key={link.name}>
                   <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
         </div>
@@ -115,21 +140,12 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
-              >
+            {socialLinks.map(social => <a key={social.label} href={social.href} aria-label={social.label} className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300">
                 <social.icon className="w-5 h-5" />
-              </a>
-            ))}
+              </a>)}
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
