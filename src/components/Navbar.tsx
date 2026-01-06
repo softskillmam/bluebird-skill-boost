@@ -35,32 +35,32 @@ const Navbar = () => {
       <div
         className={cn(
           "w-full max-w-5xl transition-all duration-500 ease-out",
-          scrolled
-            ? "bg-background/80 backdrop-blur-xl shadow-elevated border border-border/50 rounded-full"
+          scrolled || isOpen
+            ? "bg-background/95 backdrop-blur-xl shadow-elevated border border-border/50 rounded-2xl lg:rounded-full"
             : "bg-transparent"
         )}
       >
-        <div className="flex items-center justify-between h-14 lg:h-16 px-4 lg:px-6">
+        <div className="flex items-center justify-between h-14 px-4 lg:px-6">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2 shrink-0">
-            <div className="w-9 h-9 bg-gradient-primary rounded-xl flex items-center justify-center shadow-glow">
-              <span className="text-primary-foreground font-bold text-lg">B</span>
+            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center shadow-glow">
+              <span className="text-primary-foreground font-bold text-base">B</span>
             </div>
-            <span className="text-lg font-bold text-foreground hidden sm:block">
+            <span className="text-base font-bold text-foreground hidden sm:block">
               Blue<span className="text-primary">Birds</span>
             </span>
           </a>
 
           {/* Desktop Pill Navigation */}
           <div className="hidden lg:flex items-center">
-            <div className="flex items-center bg-muted/50 rounded-full p-1 gap-1">
+            <div className="flex items-center bg-muted/50 rounded-full p-1 gap-0.5">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => handleLinkClick(link.name)}
                   className={cn(
-                    "relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300",
+                    "relative px-3 py-1.5 text-sm font-medium rounded-full transition-all duration-300",
                     activeLink === link.name
                       ? "bg-primary text-primary-foreground shadow-glow"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -77,7 +77,7 @@ const Navbar = () => {
             <Button 
               variant="hero" 
               size="sm"
-              className="rounded-full px-6 shadow-glow"
+              className="rounded-full px-5 shadow-glow"
             >
               Get Started
             </Button>
@@ -86,7 +86,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             className={cn(
-              "lg:hidden p-2.5 rounded-full transition-all duration-300",
+              "lg:hidden p-2 rounded-full transition-all duration-300",
               isOpen 
                 ? "bg-primary text-primary-foreground" 
                 : "bg-muted/50 text-foreground hover:bg-muted"
@@ -94,58 +94,40 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
-      </div>
 
-      {/* Mobile Navigation Overlay */}
-      <div
-        className={cn(
-          "fixed inset-0 bg-background/95 backdrop-blur-xl transition-all duration-500 lg:hidden",
-          isOpen 
-            ? "opacity-100 pointer-events-auto" 
-            : "opacity-0 pointer-events-none"
-        )}
-        style={{ top: "80px" }}
-      >
-        <div className="container mx-auto px-6 py-8">
-          <div className="flex flex-col gap-2">
-            {navLinks.map((link, index) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => handleLinkClick(link.name)}
-                className={cn(
-                  "flex items-center justify-between py-4 px-5 rounded-2xl text-lg font-medium transition-all duration-300",
-                  activeLink === link.name
-                    ? "bg-primary text-primary-foreground shadow-glow"
-                    : "text-foreground hover:bg-muted"
-                )}
-                style={{
-                  transitionDelay: isOpen ? `${index * 50}ms` : "0ms",
-                  transform: isOpen ? "translateX(0)" : "translateX(-20px)",
-                  opacity: isOpen ? 1 : 0,
-                }}
-              >
-                <span>{link.name}</span>
-                <span className="text-sm opacity-60">→</span>
-              </a>
-            ))}
-          </div>
-          
-          <div 
-            className="mt-8 transition-all duration-500"
-            style={{
-              transitionDelay: isOpen ? "300ms" : "0ms",
-              transform: isOpen ? "translateY(0)" : "translateY(20px)",
-              opacity: isOpen ? 1 : 0,
-            }}
-          >
+        {/* Mobile Navigation - Attached dropdown */}
+        <div
+          className={cn(
+            "lg:hidden overflow-hidden transition-all duration-300 ease-out",
+            isOpen ? "max-h-96 opacity-100 pb-4" : "max-h-0 opacity-0"
+          )}
+        >
+          <div className="px-4 pt-2 border-t border-border/30">
+            <div className="flex flex-wrap gap-2 py-3">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => handleLinkClick(link.name)}
+                  className={cn(
+                    "px-4 py-2 rounded-full text-sm font-medium transition-all duration-300",
+                    activeLink === link.name
+                      ? "bg-primary text-primary-foreground shadow-glow"
+                      : "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
+                  )}
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+            
             <Button 
               variant="hero" 
-              size="lg" 
-              className="w-full rounded-2xl text-lg py-6 shadow-glow"
+              size="sm" 
+              className="w-full rounded-full mt-2"
             >
               Get Started
             </Button>
