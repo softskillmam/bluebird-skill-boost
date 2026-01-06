@@ -106,14 +106,14 @@ const Navbar = () => {
           )}
         >
           <div className="px-4 pt-2 border-t border-border/30">
-            <div className="flex flex-wrap gap-2 py-3">
+            <div className="flex flex-col gap-2 py-3">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => handleLinkClick(link.name)}
                   className={cn(
-                    "px-4 py-2 rounded-full text-sm font-medium transition-all duration-300",
+                    "px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 text-center",
                     activeLink === link.name
                       ? "bg-primary text-primary-foreground shadow-glow"
                       : "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
