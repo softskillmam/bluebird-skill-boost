@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Users, BookOpen, Award, Mic } from "lucide-react";
 import heroIllustration from "@/assets/hero-illustration.png";
+import heroIllustration1 from "@/assets/institute-demo3.png";
 import { useParallax, useMouseParallax } from "@/hooks/useParallax";
 
 const stats = [
@@ -31,19 +32,6 @@ const Hero = () => {
           style={{ transform: `translate(${mousePosition.x * 3}px, ${mousePosition.y * 3}px)` }}
         />
         
-        {/* Floating geometric shapes */}
-        <div 
-          className="absolute top-32 right-20 w-4 h-4 bg-primary/40 rotate-45"
-          style={{ transform: `translateY(${parallaxOffset * 0.5}px) rotate(45deg)` }}
-        />
-        <div 
-          className="absolute top-1/2 left-20 w-6 h-6 border-2 border-accent/30 rounded-full"
-          style={{ transform: `translateY(${parallaxOffset * 0.8}px)` }}
-        />
-        <div 
-          className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-secondary/50 rounded-full"
-          style={{ transform: `translateY(${parallaxOffset * 0.6}px)` }}
-        />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -104,38 +92,17 @@ const Hero = () => {
             style={{ transform: `translateY(${parallaxOffset * -0.2}px)` }}
           >
             <div 
-              className="relative"
+              className="relative lg:-mr-20 xl:-mr-32"
               style={{ 
                 transform: `translate(${mousePosition.x * 1.5}px, ${mousePosition.y * 1.5}px)` 
               }}
             >
               <div className="absolute inset-0 bg-gradient-primary rounded-3xl blur-3xl opacity-20 animate-pulse-soft" />
               <img
-                src={heroIllustration}
+                src={heroIllustration1}
                 alt="Students learning soft skills together"
-                className="relative z-10 w-full max-w-lg lg:max-w-xl animate-float rounded-2xl"
+                className="relative z-10 w-[550px] lg:w-[700px] xl:w-[800px] animate-float rounded-2xl"
               />
-              
-              {/* Floating badges */}
-              <div 
-                className="absolute -left-8 top-1/4 px-4 py-2 bg-card border border-border rounded-xl shadow-card animate-fade-in-up"
-                style={{ 
-                  animationDelay: "0.5s",
-                  transform: `translate(${mousePosition.x * -2}px, ${mousePosition.y * -2}px)` 
-                }}
-              >
-                <p className="text-sm font-semibold text-foreground">🎯 95% Success Rate</p>
-              </div>
-              
-              <div 
-                className="absolute -right-4 bottom-1/4 px-4 py-2 bg-card border border-border rounded-xl shadow-card animate-fade-in-up"
-                style={{ 
-                  animationDelay: "0.6s",
-                  transform: `translate(${mousePosition.x * 2}px, ${mousePosition.y * 2}px)` 
-                }}
-              >
-                <p className="text-sm font-semibold text-foreground">🚀 10K+ Students</p>
-              </div>
             </div>
           </div>
         </div>
