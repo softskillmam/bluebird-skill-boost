@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import SkillGap from "@/components/SkillGap";
 import Courses from "@/components/Courses";
+import LMSSection from "@/components/LMSSection";
 // import Trainers from "@/components/Trainers";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
@@ -20,6 +21,7 @@ const Index = () => {
         <Features />
         <SkillGap />
         <Courses />
+        <LMSSection />
         {/* <Trainers /> */}
         <Testimonials />
         <Pricing />

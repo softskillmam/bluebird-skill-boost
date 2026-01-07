@@ -1,6 +1,7 @@
 import { Star, Quote } from "lucide-react";
 import ParallaxSection from "./ParallaxSection";
 import { useParallax } from "@/hooks/useParallax";
+import ImageCarousel from "./ImageCarousel";
 
 const testimonials = [
   {
@@ -75,6 +76,9 @@ const Testimonials = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
+        {/* Image Carousel */}
+        <ImageCarousel />
+
         {/* Section Header */}
         <ParallaxSection className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
