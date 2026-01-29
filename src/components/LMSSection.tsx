@@ -100,7 +100,7 @@ const LMSSection = () => {
               className="bg-white text-primary hover:bg-white/90"
               asChild
             >
-              <a href="#contact">Request Demo</a>
+              <a href="/auth">Get Access to LMS Portal</a>
             </Button>
           </div>
         </ParallaxSection>

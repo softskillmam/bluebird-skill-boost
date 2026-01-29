@@ -1,0 +1,251 @@
+# Product Requirements Document (PRD)
+
+## Product Name
+
+Learning Management System (LMS) – Web & Mobile Dashboard
+
+## Version
+
+v1.0
+
+## Prepared By
+
+Product Team
+
+## 1. Objective
+
+The objective of this product is to design and develop a **clean, modern, and responsive LMS portal** that allows learners to easily access courses, study materials, assessments, and progress tracking across **web and mobile devices**.
+
+The platform should support multiple course categories such as **Soft Skills, Technical Skillsets, Aptitude Training, and Other Courses**, while providing a scalable navigation system for future expansion.
+
+---
+
+## 2. Target Users
+
+### Primary Users
+
+* College students
+* Job seekers / placement preparation candidates
+* Early career professionals
+
+### Secondary Users
+
+* Trainers / instructors
+* Admins / content managers
+
+---
+
+## 3. Key User Goals
+
+* Quickly access enrolled courses
+* Resume learning from the last completed lesson
+* Navigate modules and lessons with minimal friction
+* Track progress, assessments, and certificates
+* Seamlessly switch between mobile and web
+
+---
+
+## 4. Platform Scope
+
+### In Scope
+
+* Web (Desktop & Tablet)
+* Mobile Web & Mobile App (Android / iOS)
+* Student-facing dashboard
+
+### Out of Scope (Phase 1)
+
+* Instructor course creation panel
+* Advanced analytics dashboard
+
+---
+
+## 5. Information Architecture
+
+### 5.1 Global Sidebar Navigation (Primary Navigation)
+
+This sidebar is persistent across the platform and serves as the main navigation.
+
+**Menu Items:**
+
+1. Dashboard
+2. My Courses
+3. Course Library
+4. Learning Path / Roadmap
+5. Assessments
+6. Resources
+7. Discussions / Doubts
+8. Announcements
+9. Profile
+10. Settings / Help
+
+**Behavior:**
+
+* Collapsible on web
+* Icon-only collapsed state
+* Hidden behind hamburger menu on mobile
+
+---
+
+### 5.2 Course-Level Sidebar (Contextual Navigation)
+
+Displayed only when a user enters a specific course.
+
+**Menu Items:**
+
+* Course Overview
+* Modules (Expandable)
+* Lessons
+* Assignments
+* Quizzes & Tests
+* Downloads
+* Discussion (Course-specific)
+* Notes
+
+**Behavior:**
+
+* Accordion-based module navigation
+* Highlights current lesson
+* Displays completion indicators
+* Collapsible on web, slide-in drawer on mobile
+
+---
+
+## 6. Dashboard Requirements
+
+### 6.1 Student Dashboard
+
+**Components:**
+
+* Welcome message
+* Continue Learning card
+* Enrolled courses overview
+* Progress summary
+* Upcoming assessments
+* Announcements
+
+---
+
+## 7. Course Structure
+
+### Course Card Attributes
+
+* Course title
+* Category
+* Rating
+* Duration
+* Number of modules
+* Enrollment count
+* Progress status
+
+### Course Content Types
+
+* Video lessons
+* Reading materials
+* PDFs / Downloads
+* Practice exercises
+* Quizzes
+* Assignments
+
+---
+
+## 8. Mobile Responsiveness Requirements
+
+### Navigation
+
+* Bottom navigation bar for:
+
+  * Home
+  * Courses
+  * Progress
+  * Profile
+
+* Hamburger menu for secondary items
+
+### Course View
+
+* Swipeable module list
+* Sticky "Continue / Next Lesson" CTA
+* Optimized video player for mobile
+
+---
+
+## 9. UI / UX Guidelines
+
+* Clean, minimal design
+* Card-based layouts
+* Soft shadows and rounded corners
+* Consistent spacing and typography
+* Color-coded course categories
+* Clear progress indicators
+
+---
+
+## 10. Functional Requirements
+
+### Must Have
+
+* User authentication
+* Course enrollment
+* Progress tracking
+* Resume learning functionality
+* Assessment attempts
+* Certificate generation
+
+### Nice to Have
+
+* Bookmark lessons
+* Offline downloads (mobile)
+* Dark mode
+* Global search
+
+---
+
+## 11. Non-Functional Requirements
+
+* Responsive across all screen sizes
+* Fast load time (< 3s)
+* Scalable navigation structure
+* Secure content access
+* Accessibility compliant (WCAG basics)
+
+---
+
+## 12. Success Metrics
+
+* Course completion rate
+* Daily active users (DAU)
+* Average session duration
+* Assessment participation rate
+* User satisfaction score
+
+---
+
+## 13. Risks & Considerations
+
+* Navigation complexity with many courses
+* Content scalability
+* Mobile performance for video content
+
+---
+
+## 14. Future Enhancements
+
+* Instructor dashboard
+* AI-based course recommendations
+* Advanced analytics
+* Gamification (badges, streaks)
+
+---
+
+## 15. Approval
+
+| Role          | Name | Status  |
+| ------------- | ---- | ------- |
+| Product Owner |      | Pending |
+| Tech Lead     |      | Pending |
+| Design Lead   |      | Pending |
+
+---
+
+**End of Document**
